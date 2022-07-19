@@ -25,18 +25,8 @@ export default async (name: string, schemas: any[], outPath: string) => {
 
   const body = [];
   body.push(
-    w.importStmt(['CosmWasmClient', 'ExecuteResult', 'SigningCosmWasmClient'], '@cosmjs/cosmwasm-stargate')
+    w.importStmt(['SecretNetworkClient', 'Wallet', 'fromUtf8'], 'secretjs') 
   );
-
-  if (typeHash.hasOwnProperty('Coin')) {
-    body.push(
-      w.importStmt(['StdFee'], '@cosmjs/amino')
-    );
-  } else {
-    body.push(
-      w.importStmt(['Coin', 'StdFee'], '@cosmjs/amino')
-    );
-  }
 
 
   // TYPES
