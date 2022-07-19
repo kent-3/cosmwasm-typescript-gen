@@ -106,7 +106,7 @@ export const createQueryClass = (
       [
         // client
         classProperty('client', t.tsTypeAnnotation(
-          t.tsTypeReference(t.identifier('CosmWasmClient'))
+          t.tsTypeReference(t.identifier('SecretNetworkClient'))
         )),
 
         // contractAddress
@@ -118,7 +118,7 @@ export const createQueryClass = (
         t.classMethod('constructor',
           t.identifier('constructor'),
           [
-            typedIdentifier('client', t.tsTypeAnnotation(t.tsTypeReference(t.identifier('CosmWasmClient')))),
+            typedIdentifier('client', t.tsTypeAnnotation(t.tsTypeReference(t.identifier('SecretNetworkClient')))),
             typedIdentifier('contractAddress', t.tsTypeAnnotation(t.tsStringKeyword()))
 
           ],
@@ -358,7 +358,7 @@ export const createExecuteClass = (
       [
         // client
         classProperty('client', t.tsTypeAnnotation(
-          t.tsTypeReference(t.identifier('SigningCosmWasmClient'))
+          t.tsTypeReference(t.identifier('SecretNetworkClient'))
         )),
 
         // sender
@@ -375,7 +375,7 @@ export const createExecuteClass = (
         t.classMethod('constructor',
           t.identifier('constructor'),
           [
-            typedIdentifier('client', t.tsTypeAnnotation(t.tsTypeReference(t.identifier('SigningCosmWasmClient')))),
+            typedIdentifier('client', t.tsTypeAnnotation(t.tsTypeReference(t.identifier('SecretNetworkClient')))),
             typedIdentifier('sender', t.tsTypeAnnotation(t.tsStringKeyword())),
             typedIdentifier('contractAddress', t.tsTypeAnnotation(t.tsStringKeyword()))
           ],
